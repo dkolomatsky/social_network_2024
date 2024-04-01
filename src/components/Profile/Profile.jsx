@@ -1,8 +1,10 @@
 import React from "react";
+import css from './Profile.module.css';
+import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
   return (
-    <div className="content">
+    <div className={css.content}>
         <div>
           <img
             src="https://edwardlowe.org/wp-content/uploads/revslider/mountainpng-1.png"
@@ -10,14 +12,7 @@ const Profile = () => {
           ></img>
         </div>
         <div>Ava + Description</div>
-        <div>
-          My Post
-          <div>
-            New post
-            <div>post 1</div>
-            <div>post 2</div>
-          </div>
-        </div>
+        <MyPosts />
     </div>
   )
 }
