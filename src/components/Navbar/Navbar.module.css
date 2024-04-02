@@ -1,17 +1,22 @@
-.navbar{
+.nav{
   grid-area: n;
   background-color: grey ;
+  padding: 10px;
+  text-align: center;
 }
-.item{
-text-align: center;
+
+.item a{
+color: white;
+text-decoration: none;
+
 }
-.link{
-  text-decoration: none;
-  color: white;
+.item  a.activeLink{
+color: gold;
 }
-.active{
-  color: gold;
-}
+
+
+
+
 
 
 

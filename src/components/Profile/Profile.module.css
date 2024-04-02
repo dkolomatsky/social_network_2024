@@ -1,5 +1,9 @@
-.content{
-  grid-area: c;
+.profileImage{
+  max-height: 400px;
+  max-width: 800px ;
+}
+.imageContainer{
+ text-align: center;
 }
 
 

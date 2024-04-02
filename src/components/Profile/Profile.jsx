@@ -4,9 +4,9 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
   return (
-    <div className={css.content}>
-        <div>
-          <img
+    <div>
+        <div className={css.imageContainer}>
+          <img className={css.profileImage}
             src="https://edwardlowe.org/wp-content/uploads/revslider/mountainpng-1.png"
             alt="logo"
           ></img>
