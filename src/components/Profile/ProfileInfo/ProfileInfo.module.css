@@ -1,0 +1,10 @@
+.profileImage{
+  max-height: 400px;
+  max-width: 800px ;
+}
+.imageContainer{
+ text-align: center;
+}
+.profileBlock{
+  padding: 10px;
+}

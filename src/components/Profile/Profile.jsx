@@ -1,17 +1,12 @@
 import React from "react";
-import css from './Profile.module.css';
+// import css from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
   return (
     <div>
-        <div className={css.imageContainer}>
-          <img className={css.profileImage}
-            src="https://edwardlowe.org/wp-content/uploads/revslider/mountainpng-1.png"
-            alt="logo"
-          ></img>
-        </div>
-        <div>Ava + Description</div>
+        <ProfileInfo />
         <MyPosts />
     </div>
   )
