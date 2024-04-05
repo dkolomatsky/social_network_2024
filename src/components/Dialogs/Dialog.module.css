@@ -1,6 +1,7 @@
 .dialogs{
   display: grid;
   grid-template-columns: 2fr 4fr;
+  background-color: cadetblue;
 }
 .dialogItems{
   padding: 5px;
@@ -12,5 +13,12 @@
 .dialogItem{
   margin-bottom: 5px;
 }
-.messages{}
-.message{}
+.dialogItem a{
+  color: white;
+  text-decoration: none;
+}
+
+.messages {
+  color: white;
+}
+
