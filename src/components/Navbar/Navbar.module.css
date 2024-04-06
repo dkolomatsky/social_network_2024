@@ -11,6 +11,19 @@ text-decoration: none;
 
 }
 
+.friendsBlock{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+h3, h5 {
+  margin: 0 auto;
+}
+.settingsBlock{
+  margin: 10px 0 10px 0;
+}
+
 
 
 
