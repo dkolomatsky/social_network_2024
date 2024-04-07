@@ -20,7 +20,8 @@ const App = (props) => {
             path="/profile"
             Component={() => (
               <Profile
-                posts={props.state.profilePage.posts}
+                profilePage={props.state.profilePage}
+                updateNewPostContent={props.updateNewPostContent}
                 addPost={props.addPost}
               />
             )}

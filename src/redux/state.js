@@ -1,9 +1,12 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
   profilePage: {
     posts: [
       { id: 1, post: "Hello, how are you?", count: 3 },
       { id: 2, post: "It's my first post.", count: 10 },
     ],
+    newPostContent: "Hello",
   },
   dialogsPage: {
     dialogs: [
@@ -66,13 +69,26 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 5,
-    post: postMessage,
+    post: state.profilePage.newPostContent,
     count: 0,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostContent = "";
+  // ⛳
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostContent = (newContent) => {
+  state.profilePage.newPostContent = newContent;
+  // ⛳
+  rerenderEntireTree(state);
 };
 
 export default state;
+
+// ⛳ -
+/* отдаем обьект state чтобы его можно было использовать его там где создается функция rerenderEntireTree и во все места где нужно его передать при вызове этой функции
+ */
