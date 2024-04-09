@@ -1,4 +1,4 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {};
 
 let state = {
   profilePage: {
@@ -69,26 +69,27 @@ let state = {
   },
 };
 
-export let addPost = () => {
+export const addPost = (postMessage) => {
   let newPost = {
     id: 5,
-    post: state.profilePage.newPostContent,
+    post: postMessage,
     count: 0,
   };
   state.profilePage.posts.push(newPost);
-  state.profilePage.newPostContent = "";
-  // ⛳
   rerenderEntireTree(state);
 };
-
-export let updateNewPostContent = (newContent) => {
+export const updateNewPostContent = (newContent) => {
   state.profilePage.newPostContent = newContent;
-  // ⛳
   rerenderEntireTree(state);
 };
-
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer; //⛳
+};
 export default state;
 
-// ⛳ -
+// ⛳ - rerenderEntireTree(state);
 /* отдаем обьект state чтобы его можно было использовать его там где создается функция rerenderEntireTree и во все места где нужно его передать при вызове этой функции
  */
+
+// ⛳ - observer - наблюдатель который смотрит за состоянием (в него можно передавать за чем смотреть)
+// ⛳ - observer - это патерн !!!!!! (есть и другие паттерны - onClick, onChange etc)
