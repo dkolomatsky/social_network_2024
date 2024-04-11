@@ -1,6 +1,7 @@
 import React from "react";
 import css from './MyPosts.module.css';
 import Post from "./Post/Post";
+import { addPostActionCreator, updateNewPostContentActionCreator } from "../../../redux/state";
 
 
 const MyPosts = (props) => {
@@ -10,14 +11,13 @@ const postElements = props.posts.map((p) => <Post message={p.post} count={p.coun
 let newPostElements = React.createRef();
 
 const addPost = () => {
-  let text = newPostElements.current.value;
-      props.addPost(text);
-      newPostElements.current.value = '';
+  // ⛳ - ВАЖНО указываем какой тип action мы вызываем у метода dispatch (типы action мы создадим с помощью фунцкии что то типа actionCreator а тут ее просто вызовем )
+      props.dispatch(addPostActionCreator());
 }
 const onPostChange = () => {
-
    let text = newPostElements.current.value;
-   props.updateNewPostContent(text);
+   // ⛳ - ВАЖНО указываем какой тип action мы вызываем у метода dispatch и если надо еще какие-то свойства вызвать то указываем их
+   props.dispatch(updateNewPostContentActionCreator(text));
    
 }
 
