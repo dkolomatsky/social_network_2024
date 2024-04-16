@@ -4,29 +4,23 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import store from "./redux/store";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const rerenderEntireTree = (state) => {
+const rerenderEntireTree = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App
-          store={store}
-          state={state}
-          dispatch={store.dispatch.bind(store)} //⛳
-        />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>
   );
 };
 
-rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
-
-// ⛳
-/*
-dispatch={store.dispatch.bind(store)}
-чтобы не терялся контекст куда смотрят методы мы их забиндим к конкретному обьекту
-если не прибиндить то контекст при вызове этих методов будет терятся
-*/
+rerenderEntireTree();
+store.subscribe(() => {
+  rerenderEntireTree();
+});

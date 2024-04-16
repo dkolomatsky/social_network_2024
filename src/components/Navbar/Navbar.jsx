@@ -3,8 +3,10 @@ import css from './Navbar.module.css';
 import { NavLink } from "react-router-dom";
 import SideBar from "./SideBar/SideBar";
 
+
 const Navbar = (props) => {
-  const topFriends = props.topFriends.map(f => <SideBar key={f.id} name={f.name} id={f.id} avatar={f.avatar} />)
+  let state = props.topFriends;
+  const topFriends = state.topFriends.map(f => <SideBar key={f.id} name={f.name} id={f.id} avatar={f.avatar} />)
 
   return (
 <nav className={css.nav}>
