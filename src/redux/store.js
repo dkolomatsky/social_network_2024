@@ -71,7 +71,9 @@ let store = {
       ],
     },
   },
-  _callSubscriber() {},
+  _callSubscriber() {
+    console.log("state changed");
+  },
 
   getState() {
     return this._state;
@@ -79,7 +81,6 @@ let store = {
   subscribe(observer) {
     this._callSubscriber = observer; //⛳
   },
-
   dispatch(action) {
     // ⛳ - ВАЖНО при создании action всегда нужно задавть ему type иначе будет не понятно к какому методу будет применен этот action
     // в state методов редьюсеров передаем конкретный участок state и action
@@ -88,7 +89,6 @@ let store = {
     this._callSubscriber(this._state);
   },
 };
-
 
 export default store;
 

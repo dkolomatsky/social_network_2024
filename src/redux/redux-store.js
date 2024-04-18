@@ -1,5 +1,5 @@
 // в библиотеке редакса есть функция которая создает основной store(обьект который я создал вручную в файле state.js)
-import createStore, { combineReducers } from "redux"; // импортируем метод создания store
+import { combineReducers, createStore } from "redux"; // импортируем метод создания store
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";

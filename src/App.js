@@ -1,20 +1,20 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import { Routes, Route } from "react-router-dom";
 import News from "./components/Navbar/News/News";
 import Music from "./components/Navbar/Music/Music";
 import Settings from "./components/Navbar/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import store from "./redux/store";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
 
 const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <NavbarContainer store={store} />
+      <NavbarContainer store={props.store} />
       <div className="app-wrapper-content">
         <Routes>
           <Route
